@@ -1,0 +1,43 @@
+
+.container{
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 40px;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 70%;
+    box-shadow: 10px 11px 26px 1px rgba(61,61,66,0.75);
+}
+
+.container__top img{
+    position: relative;
+    display: block;
+    width: 30%;
+}
+
+.article{
+    border-bottom: 3px outset rgb(229, 229, 229);
+}
+
+.container__bottom{
+    margin-top: 40px;
+}
+
+button{
+    background-color: #A149FA;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    padding: 13px;
+    margin: auto;
+    color: white;
+    box-shadow: 10px 11px 26px 1px rgba(61,61,66,0.75);
+}
+
+@media only screen and (max-width: 480px){
+    .container__top img{
+        position: relative;
+        display: block;
+        width: 20%;
+    }
+}
