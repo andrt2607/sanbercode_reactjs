@@ -41,7 +41,7 @@ let kalimat= ["saya", "sangat", "senang", "belajar", "javascript"];
 var result = kalimat.join(" ");
 console.log(result);
 
-//Soal 9
+//Soal 09
 var sayuran=[];
 sayuran.push('Kangkung');
 sayuran.push('Bayam');
