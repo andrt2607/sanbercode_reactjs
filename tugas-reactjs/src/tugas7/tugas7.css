@@ -1,0 +1,13 @@
+.App-content{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 8px 9px 5px -1px rgba(102,102,102,0.5);
+  }
+  
+  .App-content h1{
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+  }

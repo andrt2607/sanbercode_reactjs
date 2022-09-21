@@ -1,13 +1,13 @@
 import './App.css';
+import Tugas7 from './tugas7/tugas7';
+import Tugas8 from './tugas8/tugas8';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <div className="App-content">
-        <h1>Hi, Saya Alif Andarta</h1>
-        <p>Saya dari Batch 38 sudah berhasil menginstall React</p>
-      </div>
-    </div>
+    <>
+      <Tugas7/>
+      <Tugas8 name="Alif Andarta" batch="38" email="alifandarta26@gmail.com"/>
+    </>
   );
 }
 
