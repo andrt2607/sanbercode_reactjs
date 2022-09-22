@@ -1,0 +1,21 @@
+.App-content{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 8px 9px 5px -1px rgba(102,102,102,0.5);
+  }
+  
+  .App-number{
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .App-content button{
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
