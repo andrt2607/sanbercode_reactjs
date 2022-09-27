@@ -37,7 +37,7 @@ const Tugas11 = () => {
     return (
         <>
             <div className='flex justify-center'>
-                <div className="overflow-x-auto shadow-md sm:rounded-lg mb-8 w-9/12">
+                <div className="overflow-x-auto shadow-md sm:rounded-lg mb-8 mt-8 w-9/12">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead className="text-xs text-white uppercase bg-purple-500 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
