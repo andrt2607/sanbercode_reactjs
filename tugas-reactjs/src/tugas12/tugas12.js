@@ -5,10 +5,12 @@ import { useState, useEffect } from 'react';
 const Tugas12 = () => {
 
     const [dataApi, getDataFromApi] = useState(null);
+    const [fetchStatus, setFetchStatus] = useState(true);
 
     useEffect(
         () => {
-            axios.get('http://backendexample.sanbercloud.com/api/student-scores')
+            if(fetchStatus === true){
+                axios.get('http://backendexample.sanbercloud.com/api/student-scores')
                 .then(
                     (res) => {
                         getDataFromApi([...res.data])
@@ -18,7 +20,10 @@ const Tugas12 = () => {
                         console.log(error)
                     }
                 )
-        }, []
+
+                setFetchStatus(false)
+            }
+        }, [fetchStatus, setFetchStatus]
     );
 
     const handleIndexScore = (score) => {
@@ -71,10 +76,19 @@ const Tugas12 = () => {
         }).then(
             (res) => {
                 console.log(res)
+                setFetchStatus(true)
             }
         ).catch(
             (error) => {
                 console.log(error)
+            }
+        )
+
+        setInput(
+            {
+                name: '',
+                course: '',
+                score: ''
             }
         )
     }
