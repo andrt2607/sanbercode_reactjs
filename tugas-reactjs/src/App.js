@@ -8,19 +8,27 @@ import Tugas11 from './tugas11/tugas11';
 import Tugas12 from './tugas12/tugas12';
 import Tugas13 from './tugas13/tugas13';
 import { GlobalProvider } from './context/GlobalContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Tugas15List from './tugas15/Tugas15List';
+import Tugas15Form from './tugas15/Tugas15Form';
+import CustomNavbar from './components/navbar';
 
 const App = () => {
   return (
-    <GlobalProvider>
-      {/* <Tugas7/>
-      <Tugas8 name="Alif Andarta" batch="38" email="alifandarta26@gmail.com"/>
-      <Tugas9/>
-      <Tugas10/> */}
-      {/* <Tugas11/> */}
-      {/* <Tugas12/> */}
-      <Tugas13/>
-    </GlobalProvider>
-  );
+    <BrowserRouter>
+
+      <GlobalProvider>
+        <CustomNavbar />
+        <Routes>
+          <Route path='/' element={<Tugas7 />} />
+          <Route path='/tugas15' element={<Tugas15List />} />
+          <Route path='/create' element={<Tugas15Form />} />
+          <Route path='/edit/:IdData' element={<Tugas15Form />} />
+        </Routes>
+      </GlobalProvider>
+      );
+    </BrowserRouter>
+  )
 }
 
 export default App;

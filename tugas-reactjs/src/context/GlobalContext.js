@@ -1,9 +1,12 @@
-import React, { createContext , useState} from "react"
+import React, { createContext, useState } from "react"
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 export const GlobalContext = createContext()
 
 export const GlobalProvider = (props) => {
+
+    let navigate = useNavigate()
 
     const [dataApi, getDataFromApi] = useState(null);
     const [fetchStatus, setFetchStatus] = useState(true);
@@ -59,20 +62,22 @@ export const GlobalProvider = (props) => {
             }).then(
                 (res) => {
                     setFetchStatus(true)
+                    navigate('/tugas15')
                 }
             ).catch(
                 (error) => {
                     console.log(error)
                 }
             )
-        }else{
-            axios.put(`https://backendexample.sanbercloud.com/api/student-scores/${currentId}`, {name, course, score})
-            .then(
-                (res) => {
-                    console.log('Update : '+res)
-                    setFetchStatus(true)
-                }
-            )
+        } else {
+            axios.put(`https://backendexample.sanbercloud.com/api/student-scores/${currentId}`, { name, course, score })
+                .then(
+                    (res) => {
+                        console.log('Update : ' + res)
+                        setFetchStatus(true)
+                        navigate('/tugas15')
+                    }
+                )
         }
 
         setCurrentId(-1)
@@ -92,8 +97,9 @@ export const GlobalProvider = (props) => {
         axios.delete(`https://backendexample.sanbercloud.com/api/student-scores/${idData}`)
             .then(
                 (res) => {
-                    console.log('Delete : '+res)
+                    console.log('Delete : ' + res)
                     setFetchStatus(true)
+                    navigate('/tugas15')
                 }
             ).catch(
                 (error) => {
@@ -111,20 +117,7 @@ export const GlobalProvider = (props) => {
 
         setCurrentId(idData)
 
-        axios.get(`https://backendexample.sanbercloud.com/api/student-scores/${idData}`)
-            .then(
-                (res) => {
-                    console.log('Get Edit : '+res)
-                    let data = res.data
-                    setInput(
-                        {
-                            name: data.name,
-                            course: data.course,
-                            score: data.score
-                        }
-                    )
-                }
-            )
+        navigate(`/edit/${idData}`)
     }
 
     return (
@@ -132,7 +125,7 @@ export const GlobalProvider = (props) => {
             {
                 dataApi, getDataFromApi,
                 fetchStatus, setFetchStatus,
-                handleIndexScore, input, setInput, 
+                handleIndexScore, input, setInput,
                 handleInput,
                 handleSubmit,
                 handleDelete,
